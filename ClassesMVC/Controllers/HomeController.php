@@ -12,7 +12,7 @@
 				\ClassesMVC\Views\MainView::render('home');
 			}else{
 				//Renderiza para criar conta.
-				\ClassesMVC\Views\MainView::render('registrar');
+				\ClassesMVC\Views\MainView::render('login');
 			}
 
 		}
