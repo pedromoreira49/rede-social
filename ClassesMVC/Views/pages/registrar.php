@@ -16,12 +16,14 @@
 		</div><!--LOGO-->
 
 		<div class="form-login">
+			<h3 style="text-align: center;">Crie sua conta!</h3>
 			<form method="post">
+				<input type="text" name="nome" placeholder="Seu nome...">
 				<input type="text" name="login" placeholder="Login...">
 				<input type="password" name="senha" placeholder="Senha...">
-				<input type="submit" name="acao" value="Logar!">
+				<input type="submit" name="acao" value="Criar conta!">
 			</form>
-			<p><a href="<?php echo INCLUDE_PATH ?>registrar">Criar Conta</a></p>
+			
 		</div><!--FORM-LOGIN-->
 
 	</div><!--FORM-CONTAINER-LOGIN-->
