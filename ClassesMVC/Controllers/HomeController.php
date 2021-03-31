@@ -12,6 +12,31 @@
 				\ClassesMVC\Views\MainView::render('home');
 			}else{
 				//Renderiza para criar conta.
+
+				if(isset($_POST['login'])){
+					$login = $_POST['email'];
+					$senha = $_POST['senha'];
+
+					$verifica = \ClassesMVC\Mysql::connect()->prepare("SELECT * FROM usuarios WHERE email = ?");
+					$verifica->execute(array($login));
+
+					if($verifica->rowCount() == 0){
+
+						\ClassesMVC\Utilidades::alerta('Não existe nenhum usuário com este e-mail...');
+						\ClassesMVC\Utilidades::redirect(INCLUDE_PATH);
+					}else{
+						$dados = $verifica->fetch();
+						$password = $dados['senha'];
+						if(\ClassesMVC\Bcrypt::check($senha, $password)){
+							$_SESSION['login'] = $dados['email'];
+							\ClassesMVC\Utilidades::alerta('Logado com sucesso!');
+							\ClassesMVC\Utilidades::redirect(INCLUDE_PATH);	
+						}else{
+							\ClassesMVC\Utilidades::alerta('Senha incorreta...');
+							\ClassesMVC\Utilidades::redirect(INCLUDE_PATH);						}
+					}
+				}
+
 				\ClassesMVC\Views\MainView::render('login');
 			}
 

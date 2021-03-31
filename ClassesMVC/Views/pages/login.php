@@ -20,6 +20,7 @@
 				<input type="text" name="email" placeholder="E-mail...">
 				<input type="password" name="senha" placeholder="Senha...">
 				<input type="submit" name="acao" value="Logar!">
+				<input type="hidden" name="login">
 			</form>
 			<p><a href="<?php echo INCLUDE_PATH ?>registrar">Criar Conta</a></p>
 		</div><!--FORM-LOGIN-->
