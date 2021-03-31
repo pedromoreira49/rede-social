@@ -19,9 +19,10 @@
 			<h3 style="text-align: center;">Crie sua conta!</h3>
 			<form method="post">
 				<input type="text" name="nome" placeholder="Seu nome...">
-				<input type="text" name="login" placeholder="Login...">
+				<input type="text" name="email" placeholder="E-mail...">
 				<input type="password" name="senha" placeholder="Senha...">
 				<input type="submit" name="acao" value="Criar conta!">
+				<input type="hidden" name="registrar" value="registrar" />
 			</form>
 			
 		</div><!--FORM-LOGIN-->
