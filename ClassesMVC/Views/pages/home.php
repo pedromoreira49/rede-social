@@ -36,6 +36,16 @@
 					<p>Isto é apenas um teste de como ficará o conteúdo dos posts.</p>
 				</div><!--FEED-SINGLE-POST-CONTENT-->
 			</div><!--FEED-SINGLE-POST-->
+			<div class="friends-request-feed">
+				<h4>Solicitações de amizade</h4>
+				<div class="friend-request-single">
+					<img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" />
+					<div class="friend-request-single-info">
+						<h3>Joãozinho boca louca</h3>
+						<p><a href="">Aceitar</a> | <a href="">Recusar</a></p>
+					</div><!--FRIEND-REQUEST-SINGLE-INFO-->
+				</div><!--FRIEND-REQUEST-SINGLE-->
+			</div><!--FRIENDS-REQUEST-FEED-->
 		</div><!--FEED-->
 	</section><!--MAIN-FEED-->
 </body>
