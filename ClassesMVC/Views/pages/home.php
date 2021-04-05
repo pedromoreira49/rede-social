@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
+	<title>Bem-vindo, <?php echo $_SESSION['nome']; ?></title>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -21,6 +21,10 @@
 				<a href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i> feed</a>
 				<a href="#"><i class="fa fa-user" aria-hidden="true"></i> perfil</a>
 				<a href="#"><i class="fa fa-users" aria-hidden="true"></i> amigos</a>
+
+
+				<a href="?loggout">Loggout</a>
+
 			</div><!--MENU-SIDEBAR-->
 		</div><!--SIDEBAR-->
 		<div class="feed">
@@ -38,6 +42,20 @@
 			</div><!--FEED-SINGLE-POST-->
 			<div class="friends-request-feed">
 				<h4>Solicitações de amizade</h4>
+				<div class="friend-request-single">
+					<img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" />
+					<div class="friend-request-single-info">
+						<h3>Joãozinho boca louca</h3>
+						<p><a href="">Aceitar</a> | <a href="">Recusar</a></p>
+					</div><!--FRIEND-REQUEST-SINGLE-INFO-->
+				</div><!--FRIEND-REQUEST-SINGLE-->
+				<div class="friend-request-single">
+					<img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" />
+					<div class="friend-request-single-info">
+						<h3>Joãozinho boca louca</h3>
+						<p><a href="">Aceitar</a> | <a href="">Recusar</a></p>
+					</div><!--FRIEND-REQUEST-SINGLE-INFO-->
+				</div><!--FRIEND-REQUEST-SINGLE-->
 				<div class="friend-request-single">
 					<img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" />
 					<div class="friend-request-single-info">

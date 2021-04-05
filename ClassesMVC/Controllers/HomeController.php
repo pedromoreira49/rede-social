@@ -7,6 +7,13 @@
 
 		public function index(){
 
+			if(isset($_GET['loggout'])){
+				session_unset();
+				session_destroy();
+
+				\ClassesMVC\Utilidades::redirect(INCLUDE_PATH);	
+			}
+
 			if(isset($_SESSION['login'])){
 				//Renderiza a home do usuário.
 				\ClassesMVC\Views\MainView::render('home');
@@ -29,6 +36,7 @@
 						$password = $dados['senha'];
 						if(\ClassesMVC\Bcrypt::check($senha, $password)){
 							$_SESSION['login'] = $dados['email'];
+							$_SESSION['nome'] = explode(' ', $dados['nome'])[0];
 							\ClassesMVC\Utilidades::alerta('Logado com sucesso!');
 							\ClassesMVC\Utilidades::redirect(INCLUDE_PATH);	
 						}else{

@@ -93,3 +93,8 @@ section.main-feed{
 	font-size: 15px;
 	color: #454545;
 }
+
+.friend-request-single-info a{
+	font-size: 13px;
+	color: #069;
+}
