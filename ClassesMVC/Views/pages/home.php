@@ -32,12 +32,16 @@
 				<div class="feed-single-post-author">
 					<div class="img-single-post-author">
 						<!--Todo: COLOCAR IMG PLACEHOLDER-->
+						<img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" />
 					</div><!--IMG-SINGLE-POST-AUTHOR-->
-					<h3>Pedro Moreira</h3>
-					<span>9:15 01/04/2021</span>
+					<div class="feed-single-post-author-info">
+						<h3>Pedro Moreira</h3>
+						<p>9:15 01/04/2021</p>
+					</div><!--FEED-SINGLE-POST-AUTHOR-INFO-->
 				</div><!--FEED-SINGLE-POST-AUTHOR-->
 				<div class="feed-single-post-content">
 					<p>Isto é apenas um teste de como ficará o conteúdo dos posts.</p>
+					<img src="<?php echo INCLUDE_PATH_STATIC ?>images/code-source.jpg">
 				</div><!--FEED-SINGLE-POST-CONTENT-->
 			</div><!--FEED-SINGLE-POST-->
 			<div class="friends-request-feed">

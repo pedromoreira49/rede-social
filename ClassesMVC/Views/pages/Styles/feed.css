@@ -26,8 +26,10 @@ section.main-feed{
 }
 
 .feed{
+	overflow-y: auto;
 	display: flex;
-	padding: 90px;
+	flex-wrap: nowrap;
+	padding: 30px;
 	width: calc(100% - 347px);
 }
 
@@ -65,6 +67,11 @@ section.main-feed{
 	font-size: 15px;
 }
 
+.feed-single-post-content img{
+	max-width: 100%;
+	margin: 20px 0;
+}
+
 .friends-request-feed{
 	width: 18%;
 	margin-left: 2%;
@@ -80,8 +87,8 @@ section.main-feed{
 }
 
 .friend-request-single img{
-	width: 50px;
-	height: 50px;
+	width: 40px;
+	height: 40px;
 	border-radius: 50%;
 }
 
@@ -97,4 +104,31 @@ section.main-feed{
 .friend-request-single-info a{
 	font-size: 13px;
 	color: #069;
+}
+
+.feed-single-post-author{
+	display: flex;
+	flex-wrap: nowrap;
+	color: #454545;
+}
+
+.feed-single-post-author img{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+
+.img-single-post-author{
+	padding: 0 10px;
+}
+
+.feed-single-post-author h3{
+	font-size: 17px;
+	width: 100%;
+}
+
+.feed-single-post-author p{
+	font-size: 14px;
+	opacity: 0.4;
+	margin-top: 3px;
 }
