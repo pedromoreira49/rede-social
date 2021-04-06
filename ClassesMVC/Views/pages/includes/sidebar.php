@@ -1,6 +1,6 @@
 <div class="sidebar">
 			<div class="logo-sidebar">
-				<img src="<?php echo INCLUDE_PATH_STATIC ?>images/logodanki.svg" />
+				<img src="<?php echo INCLUDE_PATH_STATIC ?>images/logo-redesocial.png" />
 			</div>
 			<br/>
 			<div class="menu-sidebar">
