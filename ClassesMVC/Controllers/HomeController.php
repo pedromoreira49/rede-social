@@ -36,6 +36,7 @@
 						$password = $dados['senha'];
 						if(\ClassesMVC\Bcrypt::check($senha, $password)){
 							$_SESSION['login'] = $dados['email'];
+							$_SESSION['id'] = $dados['id'];
 							$_SESSION['nome'] = explode(' ', $dados['nome'])[0];
 							\ClassesMVC\Utilidades::alerta('Logado com sucesso!');
 							\ClassesMVC\Utilidades::redirect(INCLUDE_PATH);	

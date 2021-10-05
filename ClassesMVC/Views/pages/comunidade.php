@@ -90,86 +90,32 @@
 				<div class="container-comunidade">
 					<h4>Comunidade</h4>
 					<div class="container-comunidade-wraper">
+
+						<?php
+							$comunidade = \ClassesMVC\Models\UsuariosModel::listarComunidade();
+
+							foreach ($comunidade as $key => $value) {
+								if($value['id'] == $_SESSION['id']){
+									continue;
+								}
+							
+						?>
+
 						<div class="container-comunidade-single">
 							<div class="img-comunidade-user-single">
 								<img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" />
 							</div>
 							<div class="info-comunidade-user-single">
-								<h2>Guilherme Grillo</h2>
-								<p>guilherme@gmail.com</p>
+								<h2><?php echo $value['nome']; ?></h2>
+								<p><?php echo $value['email']; ?></p>
 							<div class="btn-solicitar-amizade">
-								<a href="<?php echo INCLUDE_PATH ?>comunidade?solicitarAmizade=10">Solicitar Amizade</a>
+								<a href="<?php echo INCLUDE_PATH ?>comunidade?solicitarAmizade=<?php echo $value['id']; ?>">Solicitar Amizade</a>
 							</div>
 							</div>
 							
 
 						</div>
-						<div class="container-comunidade-single">
-							<div class="img-comunidade-user-single">
-								<img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" />
-							</div>
-							<div class="info-comunidade-user-single">
-								<h2>Guilherme Grillo</h2>
-								<p>guilherme@gmail.com</p>
-								<div class="btn-solicitar-amizade">
-								<a href="<?php echo INCLUDE_PATH ?>comunidade?solicitarAmizade=10">Solicitar Amizade</a>
-							</div>
-							</div>
-
-
-						</div>
-						<div class="container-comunidade-single">
-							<div class="img-comunidade-user-single">
-								<img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" />
-							</div>
-							<div class="info-comunidade-user-single">
-								<h2>Guilherme Grillo</h2>
-								<p>guilherme@gmail.com</p>
-								<div class="btn-solicitar-amizade">
-								<a href="<?php echo INCLUDE_PATH ?>comunidade?solicitarAmizade=10">Solicitar Amizade</a>
-							</div>
-							</div>
-
-						</div>
-						<div class="container-comunidade-single">
-							<div class="img-comunidade-user-single">
-								<img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" />
-							</div>
-							<div class="info-comunidade-user-single">
-								<h2>Guilherme Grillo</h2>
-								<p>guilherme@gmail.com</p>
-								<div class="btn-solicitar-amizade">
-								<a href="<?php echo INCLUDE_PATH ?>comunidade?solicitarAmizade=10">Solicitar Amizade</a>
-							</div>
-							</div>
-
-						</div>
-						<div class="container-comunidade-single">
-							<div class="img-comunidade-user-single">
-								<img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" />
-							</div>
-							<div class="info-comunidade-user-single">
-								<h2>Guilherme Grillo</h2>
-								<p>guilherme@gmail.com</p>
-								<div class="btn-solicitar-amizade">
-								<a href="<?php echo INCLUDE_PATH ?>comunidade?solicitarAmizade=10">Solicitar Amizade</a>
-							</div>
-							</div>
-
-						</div>
-						<div class="container-comunidade-single">
-							<div class="img-comunidade-user-single">
-								<img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" />
-							</div>
-							<div class="info-comunidade-user-single">
-								<h2>Guilherme Grillo</h2>
-								<p>guilherme@gmail.com</p>
-								<div class="btn-solicitar-amizade">
-								<a href="<?php echo INCLUDE_PATH ?>comunidade?solicitarAmizade=10">Solicitar Amizade</a>
-							</div>
-							</div>
-
-						</div>
+						<?php } ?>
 					</div>
 			</div>
 			</div>

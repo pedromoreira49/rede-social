@@ -19,7 +19,7 @@
 		public static function listarComunidade(){
 			$pdo = \ClassesMVC\Mysql::connect();
 
-			$comunidade = pdo->prepare("SELECT * FROM usuarios");
+			$comunidade = $pdo->prepare("SELECT * FROM usuarios");
 
 			$comunidade->execute();
 
