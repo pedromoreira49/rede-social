@@ -15,6 +15,23 @@
 			}
 
 			if(isset($_SESSION['login'])){
+
+				if(isset($_GET['recusarAmizade'])){
+					$idEnviou = (int) $_GET['recusarAmizade'];
+					\ClassesMVC\Models\UsuariosModel::updateFriendRequest($idEnviou,0);
+					\ClassesMVC\Utilidades::alerta('Amizade recusada! :(');
+					\ClassesMVC\Utilidades::redirect(INCLUDE_PATH);
+				}else if(isset($_GET['aceitarAmizade'])){
+					$idEnviou = (int) $_GET['aceitarAmizade'];
+					if(\ClassesMVC\Models\UsuariosModel::updateFriendRequest($idEnviou,1)){
+						\ClassesMVC\Utilidades::alerta('Amizade aceita! :D');
+						\ClassesMVC\Utilidades::redirect(INCLUDE_PATH);
+					} else{
+						\ClassesMVC\Utilidades::alerta('Um erro ocorreu!');
+						\ClassesMVC\Utilidades::redirect(INCLUDE_PATH);
+					}
+				}
+
 				//Renderiza a home do usuário.
 				\ClassesMVC\Views\MainView::render('home');
 			}else{

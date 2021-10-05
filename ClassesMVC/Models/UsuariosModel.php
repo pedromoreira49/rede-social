@@ -77,8 +77,23 @@
 			}
 		}
 
-		public static function updateFriendRequest($accept, $send, $status){
-			
+		public static function updateFriendRequest($send, $status){
+			$pdo = \ClassesMVC\Mysql::connect();
+
+			if($status == 0){
+				$del = $pdo->prepare("DELETE FROM amizades WHERE enviou = ? AND recebeu = ? AND status = 0");
+				$del->execute(array($send,$_SESSION['id']));
+			}else if($status == 1){
+				$accept = $pdo->prepare("UPDATE amizades SET status = 1 WHERE enviou = ? AND recebeu = ?");
+				$accept->execute(array($send,$_SESSION['id']));
+
+				if($accept->rowCount() == 1){
+					return true;
+				}else{
+					return false;
+				}
+
+			}
 		}
 	}
 ?>

@@ -95,6 +95,14 @@
 							$comunidade = \ClassesMVC\Models\UsuariosModel::listarComunidade();
 
 							foreach ($comunidade as $key => $value) {
+								$pdo = \ClassesMVC\Mysql::connect();
+								$verificarRequest = $pdo->prepare("SELECT * FROM amizades WHERE (enviou = ? AND recebeu = ? AND status = 1) OR (enviou = ? AND recebeu = ? AND status = 1)");
+								$verificarRequest->execute(array($value['id'],$_SESSION['id'],$_SESSION['id'],$value['id']));
+
+								if($verificarRequest->rowCount() == 1){
+									continue;
+								}
+
 								if($value['id'] == $_SESSION['id']){
 									continue;
 								}
