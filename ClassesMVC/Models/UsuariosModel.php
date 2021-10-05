@@ -45,6 +45,24 @@
 			return true;
 		}
 
+		public static function requestsPendentes(){
+
+			$pdo = \ClassesMVC\Mysql::connect();
+
+			$pendentes = $pdo->prepare("SELECT * FROM amizades WHERE recebeu = ? AND status = 0");
+
+			$pendentes->execute(array($_SESSION['id']));
+
+			return $pendentes->fetchAll();
+		}
+
+		public static function getUsersById($id){
+			$pdo = \ClassesMVC\Mysql::connect();
+			$users = $pdo->prepare("SELECT * FROM usuarios WHERE id = ?");
+			$users->execute(array($id));
+			return $users->fetch();
+		}
+
 		public static function exiteFriendRequest($idPara){
 			$pdo = \ClassesMVC\Mysql::connect();
 
