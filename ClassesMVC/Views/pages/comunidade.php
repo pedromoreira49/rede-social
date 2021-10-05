@@ -109,7 +109,14 @@
 								<h2><?php echo $value['nome']; ?></h2>
 								<p><?php echo $value['email']; ?></p>
 							<div class="btn-solicitar-amizade">
+								<?php
+									if(\ClassesMVC\Models\UsuariosModel::exiteFriendRequest($value['id'])){
+								?>
 								<a href="<?php echo INCLUDE_PATH ?>comunidade?solicitarAmizade=<?php echo $value['id']; ?>">Solicitar Amizade</a>
+								<?php }else { ?>
+
+									<a href="javascript:void(0)" style="color: orange;">Pedido Pendente!</a>
+								<?php } ?>
 							</div>
 							</div>
 							

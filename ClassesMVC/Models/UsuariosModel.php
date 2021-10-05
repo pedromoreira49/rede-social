@@ -29,9 +29,34 @@
 		public static function solicitarAmizade($idPara){
 			$pdo = \ClassesMVC\Mysql::connect();
 
-			
+			$verificaAmizade = $pdo->prepare("SELECT * FROM amizades WHERE (enviou = ? AND recebeu = ?) OR (enviou = ? AND recebeu = ?)");
+
+			$verificaAmizade->execute(array($_SESSION['id'],$idPara,$idPara,$_SESSION['id']));
+
+			if($verificaAmizade->rowCount() == 1){
+				return false;
+			}else{
+				$insertion = $pdo->prepare("INSERT INTO amizades VALUES (null,?,?,0)");
+				if($insertion->execute(array($_SESSION['id'],$idPara))){
+					return true;
+				}
+			}
 
 			return true;
+		}
+
+		public static function exiteFriendRequest($idPara){
+			$pdo = \ClassesMVC\Mysql::connect();
+
+			$verificaAmizade = $pdo->prepare("SELECT * FROM amizades WHERE (enviou = ? AND recebeu = ?) OR (enviou = ? AND recebeu = ?)");
+
+			$verificaAmizade->execute(array($_SESSION['id'],$idPara,$idPara,$_SESSION['id']));
+
+			if($verificaAmizade->rowCount() == 1){
+				return false;
+			}else{
+				return true;
+			}
 		}
 	}
 ?>
