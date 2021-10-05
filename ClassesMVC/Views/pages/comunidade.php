@@ -115,7 +115,7 @@
 								<a href="<?php echo INCLUDE_PATH ?>comunidade?solicitarAmizade=<?php echo $value['id']; ?>">Solicitar Amizade</a>
 								<?php }else { ?>
 
-									<a href="javascript:void(0)" style="color: orange;">Pedido Pendente!</a>
+									<a href="javascript:void(0)" style="border:0; color: orange;">Pedido Pendente!</a>
 								<?php } ?>
 							</div>
 							</div>
