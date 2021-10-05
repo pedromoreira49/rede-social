@@ -25,5 +25,13 @@
 
 			return $comunidade->fetchAll();
 		}
+
+		public static function solicitarAmizade($idPara){
+			$pdo = \ClassesMVC\Mysql::connect();
+
+			
+
+			return true;
+		}
 	}
 ?>
