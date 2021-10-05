@@ -15,5 +15,15 @@
 				return false;
 			}
 		}
+
+		public static function listarComunidade(){
+			$pdo = \ClassesMVC\Mysql::connect();
+
+			$comunidade = pdo->prepare("SELECT * FROM usuarios");
+
+			$comunidade->execute();
+
+			return $comunidade->fetchAll();
+		}
 	}
 ?>

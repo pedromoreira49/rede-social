@@ -36,7 +36,7 @@
 				<div class="friend-request-single">
 					<img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" />
 					<div class="friend-request-single-info">
-						<h3>Joãozinho boca louca</h3>
+						<h3>Pedrinho boca louca</h3>
 						<p><a href="">Aceitar</a> | <a href="">Recusar</a></p>
 					</div><!--FRIEND-REQUEST-SINGLE-INFO-->
 				</div><!--FRIEND-REQUEST-SINGLE-->
