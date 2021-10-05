@@ -76,5 +76,9 @@
 				return true;
 			}
 		}
+
+		public static function updateFriendRequest($accept, $send, $status){
+			
+		}
 	}
 ?>

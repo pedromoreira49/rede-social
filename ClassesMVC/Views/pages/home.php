@@ -42,7 +42,7 @@
 					<img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" />
 					<div class="friend-request-single-info">
 						<h3><?php echo $userInfo['nome']; ?></h3>
-						<p><a href="">Aceitar</a> | <a href="">Recusar</a></p>
+						<p><a href="<?php echo INCLUDE_PATH ?>?aceitarAmizade=<?php echo $userInfo['id']; ?>">Aceitar</a> | <a href="<?php echo INCLUDE_PATH ?>?recusarAmizade=<?php echo $userInfo['id']; ?>">Recusar</a></p>
 					</div><!--FRIEND-REQUEST-SINGLE-INFO-->
 				</div><!--FRIEND-REQUEST-SINGLE-->
 				<?php }?>
