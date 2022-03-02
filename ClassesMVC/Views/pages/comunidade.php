@@ -23,66 +23,23 @@
 			<div class="container-comunidade">
 					<h4>Amigos</h4>
 					<div class="container-comunidade-wraper">
+						<?php 
+							foreach(\ClassesMVC\Models\UsuariosModel::listarAmigos() as $key => $value){
+						?>
+
 						<div class="container-comunidade-single">
 							<div class="img-comunidade-user-single">
 								<img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" />
 							</div>
 							<div class="info-comunidade-user-single">
-								<h2>Guilherme Grillo</h2>
-								<p>guilherme@gmail.com</p>
+								<h2><?php echo $value['nome']; ?></h2>
+								<p><?php echo $value['email'];?></p>
 							</div>
 
 						</div>
-						<div class="container-comunidade-single">
-							<div class="img-comunidade-user-single">
-								<img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" />
-							</div>
-							<div class="info-comunidade-user-single">
-								<h2>Guilherme Grillo</h2>
-								<p>guilherme@gmail.com</p>
-							</div>
+						
+					<?php } ?>
 
-						</div>
-						<div class="container-comunidade-single">
-							<div class="img-comunidade-user-single">
-								<img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" />
-							</div>
-							<div class="info-comunidade-user-single">
-								<h2>Guilherme Grillo</h2>
-								<p>guilherme@gmail.com</p>
-							</div>
-
-						</div>
-						<div class="container-comunidade-single">
-							<div class="img-comunidade-user-single">
-								<img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" />
-							</div>
-							<div class="info-comunidade-user-single">
-								<h2>Guilherme Grillo</h2>
-								<p>guilherme@gmail.com</p>
-							</div>
-
-						</div>
-						<div class="container-comunidade-single">
-							<div class="img-comunidade-user-single">
-								<img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" />
-							</div>
-							<div class="info-comunidade-user-single">
-								<h2>Guilherme Grillo</h2>
-								<p>guilherme@gmail.com</p>
-							</div>
-
-						</div>
-						<div class="container-comunidade-single">
-							<div class="img-comunidade-user-single">
-								<img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" />
-							</div>
-							<div class="info-comunidade-user-single">
-								<h2>Guilherme Grillo</h2>
-								<p>guilherme@gmail.com</p>
-							</div>
-
-						</div>
 					</div>
 			</div>
 			<br/>
