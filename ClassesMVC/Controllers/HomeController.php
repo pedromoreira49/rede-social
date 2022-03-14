@@ -32,6 +32,17 @@
 					}
 				}
 
+				if(isset($_POST['post_feed'])){
+
+					if($_POST['postBody'] == ''){
+						\ClassesMVC\Utilidades::alerta('Você não pode fazer um post vazio :(');
+						\ClassesMVC\Utilidades::redirect(INCLUDE_PATH);
+					}
+					\ClassesMVC\Models\HomeModel::postFeed($_POST['postBody']);
+					\ClassesMVC\Utilidades::alerta('Post feito com sucesso! :D');
+						\ClassesMVC\Utilidades::redirect(INCLUDE_PATH);
+				}
+
 				//Renderiza a home do usuário.
 				\ClassesMVC\Views\MainView::render('home');
 			}else{

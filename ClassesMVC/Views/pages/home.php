@@ -15,6 +15,14 @@
 		?>
 		</div><!--SIDEBAR-->
 		<div class="feed">
+			<div class="feed-wraper">
+			<div class="feed-form">
+				<form method="post">
+					<textarea required name="postBody" placeholder="No que você está pensando?"></textarea>
+					<input type="hidden" name="post_feed">
+					<input type="submit" name="acao" value="Postar">
+				</form>
+			</div>
 			<div class="feed-single-post">
 				<div class="feed-single-post-author">
 					<div class="img-single-post-author">
@@ -31,6 +39,7 @@
 					<img src="<?php echo INCLUDE_PATH_STATIC ?>images/code-source.jpg">
 				</div><!--FEED-SINGLE-POST-CONTENT-->
 			</div><!--FEED-SINGLE-POST-->
+		</div>
 			<div class="friends-request-feed">
 				<h4>Solicitações de amizade</h4>
 

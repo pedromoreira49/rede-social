@@ -18,7 +18,7 @@ section.main-feed{
 .sidebar{
 	background: #DEDEE5;
 	padding: 20px 50px;
-	width: 347px;
+	width: 360px
 }
 
 .sidebar .logo-sidebar img{
@@ -30,7 +30,7 @@ section.main-feed{
 	display: flex;
 	flex-wrap: nowrap;
 	padding: 30px;
-	width: calc(100% - 347px);
+	width: calc(100% - 360px);
 }
 
 .menu-sidebar{
@@ -51,6 +51,11 @@ section.main-feed{
 .menu-sidebar a:hover{
 	font-weight: bold;
 	color: #454545;
+}
+
+.feed-wraper{
+	width:80%;
+	padding:20px;
 }
 
 .feed-single-post{
@@ -132,4 +137,27 @@ section.main-feed{
 	font-size: 14px;
 	opacity: 0.4;
 	margin-top: 3px;
+}
+
+.feed-form form{
+	width: 80%;
+}
+
+.feed-form textarea{
+	padding: 15px;
+	width: 100%;
+	height: 120px;
+	border: 1px solid #ccc;
+}
+
+.feed-form input[type=submit]{
+	width: 150px;
+	display: block;
+	height: 40px;
+	background-color: #069;
+	border: 0;
+	cursor: pointer;
+	font-size: 15px;
+	color: white;
+	margin-bottom: 20px;
 }
