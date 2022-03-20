@@ -10,6 +10,6 @@
 				<a href="#"><i class="fa fa-user-o" aria-hidden="true"></i> perfil</a>
 				<a href="<?php echo INCLUDE_PATH ?>comunidade"><i class="fa fa-users" aria-hidden="true"></i> comunidade</a>
 
-				<a href="<?php echo INCLUDE_PATH ?>?loggout">loggout</a>
+				<a href="<?php echo INCLUDE_PATH ?>?loggout"><i class="fa fa-sign-out" aria-hidden="true"></i> loggout</a>
 			</div>
 		</div><!--sidebar-->

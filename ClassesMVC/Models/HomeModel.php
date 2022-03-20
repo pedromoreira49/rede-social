@@ -21,6 +21,90 @@
 			$atualizaUsuario->execute(array(date('Y-m-d H:i:s', time()),$_SESSION['id']));
 		}
 
+		public static function retrieveFriendsPosts(){
+			$pdo = \ClassesMVC\MySql::connect();
+			$amizades = $pdo->prepare("SELECT * FROM amizades WHERE (enviou = ? AND status = 1) OR (recebeu = ? AND status = 1)");
+
+			$amizades->execute(array($_SESSION['id'],$_SESSION['id']));
+
+			$amizades = $amizades->fetchAll();
+
+			$amigosConfirmados = array();
+
+			foreach ($amizades as $key => $value) {
+
+				if($value['enviou'] == $_SESSION['id']){
+
+					$amigosConfirmados[] = $value['recebeu'];
+
+				}else{
+
+					$amigosConfirmados[] = $value['enviou'];
+
+				}
+
+			}
+			$listaAmigos = array();
+			foreach ($amigosConfirmados as $key => $value) {
+
+				$listaAmigos[$key]['id'] = \ClassesMVC\Models\UsuariosModel::getUsersById($value)['id'];
+
+				$listaAmigos[$key]['nome'] = \ClassesMVC\Models\UsuariosModel::getUsersById($value)['nome'];
+
+				$listaAmigos[$key]['email'] = \ClassesMVC\Models\UsuariosModel::getUsersById($value)['email'];
+
+				$listaAmigos[$key]['ultimo_post'] = \ClassesMVC\Models\UsuariosModel::getUsersById($value)['ultimo_post'];
+			}
+			usort($listaAmigos,function($a,$b){
+
+				if(strtotime($a['ultimo_post']) >  strtotime($b['ultimo_post'])){
+
+					return -1;
+
+				}else{
+
+					return +1;
+
+				}
+			});
+			$posts = [];
+			foreach ($listaAmigos as $key => $value) {
+				$lastPost = $pdo->prepare("SELECT * FROM posts WHERE usuario_id = ? ORDER BY date DESC");
+
+				$lastPost->execute(array($value['id']));
+
+				if($lastPost->rowCount() >= 1){
+
+					$lastPost = $lastPost->fetch();
+				
+					$posts[$key]['usuario'] = $value['nome'];
+
+					$posts[$key]['data'] = $lastPost['date'];
+
+					$posts[$key]['conteudo'] = $lastPost['post'];
+					
+				}
+			}
+			$me = $pdo->prepare("SELECT * FROM usuarios WHERE id = $_SESSION[id]");
+			$me->execute();
+			$me = $me->fetch();
+
+			if(isset($posts[0])){
+				if(strtotime($me['ultimo_post']) > strtotime($posts[0]['data'])  ){
+
+					$lastPost = $pdo->prepare("SELECT * FROM posts WHERE usuario_id = $_SESSION[id] ORDER BY date DESC");
+
+					$lastPost->execute();
+
+					$lastPost = $lastPost->fetchAll()[0];
+
+					array_unshift($posts, array('data'=>$lastPost['date'],'conteudo'=>$lastPost['post'],'me'=>true  ));
+
+				}
+			}
+			return $posts;
+		}
+
 	}
 
 ?>

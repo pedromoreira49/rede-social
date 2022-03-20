@@ -22,7 +22,7 @@
 					\ClassesMVC\Utilidades::redirect(INCLUDE_PATH.'registrar');
 				}else{
 					$senha = \ClassesMVC\Bcrypt::hash($senha);
-					$registro = \ClassesMVC\Mysql::connect()->prepare("INSERT INTO usuarios VALUES (null, ?, ?, ?)");
+					$registro = \ClassesMVC\Mysql::connect()->prepare("INSERT INTO usuarios VALUES (null, ?, ?, ?, null)");
 					$registro->execute(array($nome, $email, $senha));
 
 					\ClassesMVC\Utilidades::alerta('Registrado com sucesso.');

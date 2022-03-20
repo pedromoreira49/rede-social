@@ -18,7 +18,7 @@ section.main-feed{
 .sidebar{
 	background: #DEDEE5;
 	padding: 20px 50px;
-	width: 360px
+	width: 347px
 }
 
 .sidebar .logo-sidebar img{
@@ -30,7 +30,7 @@ section.main-feed{
 	display: flex;
 	flex-wrap: nowrap;
 	padding: 30px;
-	width: calc(100% - 360px);
+	width: calc(100% - 347px);
 }
 
 .menu-sidebar{
@@ -63,6 +63,7 @@ section.main-feed{
 	padding: 30px;
 	border-radius: 10px;
 	background-color: white;
+	margin-bottom: 15px;
 }
 
 .feed-single-post-content{margin:10px 0;}
