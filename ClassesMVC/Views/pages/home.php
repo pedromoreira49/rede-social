@@ -26,7 +26,7 @@
 
 			<?php 
 				$retrievePosts = \ClassesMVC\Models\HomeModel::retrieveFriendsPosts();
-
+				
 				foreach($retrievePosts as $key => $value){
 			?>
 

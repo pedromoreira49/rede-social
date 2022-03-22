@@ -55,24 +55,10 @@
 
 				$listaAmigos[$key]['ultimo_post'] = \ClassesMVC\Models\UsuariosModel::getUsersById($value)['ultimo_post'];
 			}
-			usort($listaAmigos,function($a,$b){
-
-				if(strtotime($a['ultimo_post']) >  strtotime($b['ultimo_post'])){
-
-					return -1;
-
-				}else{
-
-					return +1;
-
-				}
-			});
-			$posts = [];
+			$posts = array();
 			foreach ($listaAmigos as $key => $value) {
 				$lastPost = $pdo->prepare("SELECT * FROM posts WHERE usuario_id = ? ORDER BY date DESC");
-
 				$lastPost->execute(array($value['id']));
-
 				if($lastPost->rowCount() >= 1){
 
 					$lastPost = $lastPost->fetch();
@@ -84,11 +70,13 @@
 					$posts[$key]['conteudo'] = $lastPost['post'];
 					
 				}
+				
+				
 			}
+
 			$me = $pdo->prepare("SELECT * FROM usuarios WHERE id = $_SESSION[id]");
 			$me->execute();
 			$me = $me->fetch();
-
 			if(isset($posts[0])){
 				if(strtotime($me['ultimo_post']) > strtotime($posts[0]['data'])  ){
 
