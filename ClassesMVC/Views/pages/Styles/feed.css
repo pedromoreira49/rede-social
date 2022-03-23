@@ -194,3 +194,8 @@ section.main-feed{
 	color: white;
 	cursor: pointer;
 }
+
+.change-profile img{
+	max-width: 200px;
+	width: 100%;
+}

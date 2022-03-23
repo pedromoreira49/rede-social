@@ -38,14 +38,14 @@
 						?>
 						<img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" />
 					<?php }else if(!isset($value['me'])){ ?>
-						<img src="<?php echo INCLUDE_PATH_STATIC ?>images/<?php echo $value['img'] ?>" />
+						<img src="<?php echo INCLUDE_PATH ?>uploads/<?php echo $value['img'] ?>" />
 					<?php } ?>
 					<?php
 						if(isset($value['me']) && $_SESSION['img'] == ''){
 						?>
 						<img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" />
 					<?php }else if(isset($value['me'])){ ?>
-						<img src="<?php echo INCLUDE_PATH_STATIC ?>images/<?php echo $_SESSION['img'] ?>" />
+						<img src="<?php echo INCLUDE_PATH ?>uploads/<?php echo $_SESSION['img'] ?>" />
 					<?php } ?>
 
 					</div><!--IMG-SINGLE-POST-AUTHOR-->

@@ -21,14 +21,15 @@
 					if(isset($_SESSION['img']) && $_SESSION['img'] == null){
 						echo '<img src="'.INCLUDE_PATH_STATIC.'images/avatar.jpg" />';
 					}else{
-						echo '<img src="'.INCLUDE_PATH_STATIC.'images/'.$_SESSION['img'].'" />';
+						echo '<img src="'.INCLUDE_PATH.'uploads/'.$_SESSION['img'].'" />';
 					}
 				?>
 				<br /> 
-				<form>
+				<form method="post" enctype="multipart/form-data">
 					<input type="text" name="nome" value="<?php echo $_SESSION['nome'];?>">
 					<input type="password" name="senha" placeholder="Sua nova senha...">
 					<input type="file" name="file">
+					<input type="hidden" name="update" value="update">
 					<input type="submit" name="acao" value="Send!">
 				</form>
 

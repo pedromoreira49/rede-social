@@ -29,7 +29,13 @@
 
 						<div class="container-comunidade-single">
 							<div class="img-comunidade-user-single">
+								<?php 
+									if($value['img'] == ''){
+								?>
 								<img src="<?php echo INCLUDE_PATH_STATIC ?>images/avatar.jpg" />
+							<?php }else{ ?>
+								<img src="<?php echo INCLUDE_PATH ?>uploads/<?php echo $value['img']; ?>" />
+							<?php } ?>
 							</div>
 							<div class="info-comunidade-user-single">
 								<h2><?php echo $value['nome']; ?></h2>
