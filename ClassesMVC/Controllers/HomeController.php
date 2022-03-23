@@ -66,6 +66,7 @@
 							$_SESSION['login'] = $dados['email'];
 							$_SESSION['id'] = $dados['id'];
 							$_SESSION['nome'] = explode(' ', $dados['nome'])[0];
+							$_SESSION['img'] = $dados['img'];
 							\ClassesMVC\Utilidades::alerta('Logado com sucesso!');
 							\ClassesMVC\Utilidades::redirect(INCLUDE_PATH);	
 						}else{

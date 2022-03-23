@@ -53,6 +53,8 @@
 
 				$listaAmigos[$key]['email'] = \ClassesMVC\Models\UsuariosModel::getUsersById($value)['email'];
 
+				$listaAmigos[$key]['img'] = \ClassesMVC\Models\UsuariosModel::getUsersById($value)['img'];
+
 				$listaAmigos[$key]['ultimo_post'] = \ClassesMVC\Models\UsuariosModel::getUsersById($value)['ultimo_post'];
 			}
 			$posts = array();
@@ -64,6 +66,8 @@
 					$lastPost = $lastPost->fetch();
 				
 					$posts[$key]['usuario'] = $value['nome'];
+
+					$posts[$key]['img'] = $value['img'];
 
 					$posts[$key]['data'] = $lastPost['date'];
 
